@@ -17,7 +17,7 @@ public class T1_3 {
         return (sin(x) + cos(y)) / (cos(x) - sin(y)) * tan(x * y);
     }
 
-    //just testing
+    //just testing the methods above
     public static void main(String[] args) {
         System.out.println(firstSimpleFunction(1, 2.2, 0));
         System.out.println(secondSimpleFunction(-5, 2, -5));
