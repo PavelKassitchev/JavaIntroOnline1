@@ -1,4 +1,5 @@
 import static java.lang.Math.*;
+
 //The class contains 3 static methods calculating functions(tasks 1 - 3)
 public class T1_3 {
 
