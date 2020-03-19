@@ -56,6 +56,5 @@ public class Task1_6_Linear {
         System.out.println(convertRational(-504.987));
         System.out.println(convertSeconds(-1111808));
         System.out.println(checkBelong(-4.9, -0.00001));
-
     }
 }
