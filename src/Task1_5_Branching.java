@@ -36,8 +36,43 @@ public class Task1_5_Branching {
 
     //This method checks if a brick with dimensions x, y and z gets through a rectangle hole with sides len and wid
     public static boolean checkBrick(double len, double wid, double x, double y, double z) {
+        //exclude the longest dimension of the brick
+        double l, w;
+        if(x >= y && x >= z) {
+            l = y;
+            w = z;
+        }
+        else if(y >= x && y >= z) {
+            l = x;
+            w = z;
+        }
+        else {
+            l = x;
+            w = y;
+        }
+        //make the longest sides of the brick and the hole "l" and "len"
+        if(w > l) {
+            double temp = l;
+            l = w;
+            w = temp;
+        }
+        if(wid > len) {
+            double temp = len;
+            len = wid;
+            wid = temp;
+        }
+        //check
+        if(w <= wid && l <= len) return true;
 
         return false;
+    }
+
+    //The method calculates a function from task 5
+    public static double calculateFunction(double x) {
+        if(x <= 3) {
+            return x * x - 3 * x + 9;
+        }
+        else return 1 / (x*x*x + 6);
     }
 
     //This is just to check the methods above
@@ -46,6 +81,8 @@ public class Task1_5_Branching {
         System.out.println(findMamimin(4.3, -3, 22, 0));
         System.out.println(checkLine(new BigDecimal(0), new BigDecimal(0), new BigDecimal(1),
                 new BigDecimal(1), new BigDecimal(-1.1), new BigDecimal(-1.1)));
+        System.out.println(checkBrick(5, 3, 4, 4, 1));
+        System.out.println(calculateFunction(3.01));
     }
 
 }
