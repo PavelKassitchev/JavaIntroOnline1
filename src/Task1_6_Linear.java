@@ -1,7 +1,8 @@
 import static java.lang.Math.*;
 
+
 //The class contains 6 static methods calculating functions(tasks 1 - 6, linear programming)
-public class T1_3 {
+public class Task1_6_Linear {
 
     //The method calculates function z=((a-3)*b/2)+c
     public static double firstSimpleFunction(double a, double b, double c) {
@@ -20,7 +21,7 @@ public class T1_3 {
 
     //The method takes a rational abc.def and convert it to rational def.abc
     public static double convertRational(double original) {
-        double converted = 0.0;
+        double converted;
         String[] numbers = String.valueOf(original).split("\\.");
         if(abs(original) > 999.999 || numbers.length != 2 || numbers[1].length() != 3
                 || (original < 0 && numbers[0].length() != 4) || (original > 0 && numbers[0].length() != 3))
@@ -44,7 +45,7 @@ public class T1_3 {
 
     //The method checks if a point with coordinates x and y belongs to the area described in the task 6
     public static boolean checkBelong(double x, double y) {
-        return false;
+        return (y >= 0 && y <= 4 && x >= -2 && x <= 2) || (y >= -3 && y <= 0 && x >= -4 && x <= 4);
     }
 
     //just testing the methods above
@@ -54,6 +55,7 @@ public class T1_3 {
         System.out.println(thirdSimpleFunction(0, 0.01));
         System.out.println(convertRational(-504.987));
         System.out.println(convertSeconds(-1111808));
+        System.out.println(checkBelong(-4.9, -0.00001));
 
     }
 }
