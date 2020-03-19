@@ -1,6 +1,6 @@
 import static java.lang.Math.*;
 
-//The class contains 3 static methods calculating functions(tasks 1 - 3)
+//The class contains 6 static methods calculating functions(tasks 1 - 6, linear programming)
 public class T1_3 {
 
     //The method calculates function z=((a-3)*b/2)+c
@@ -18,10 +18,42 @@ public class T1_3 {
         return (sin(x) + cos(y)) / (cos(x) - sin(y)) * tan(x * y);
     }
 
+    //The method takes a rational abc.def and convert it to rational def.abc
+    public static double convertRational(double original) {
+        double converted = 0.0;
+        String[] numbers = String.valueOf(original).split("\\.");
+        if(abs(original) > 999.999 || numbers.length != 2 || numbers[1].length() != 3
+                || (original < 0 && numbers[0].length() != 4) || (original > 0 && numbers[0].length() != 3))
+            throw new IllegalArgumentException("Wrong argument");
+        converted = (int)((original % 1) * 1000) + ((int)original) / 1000d;
+
+        return converted;
+    }
+
+    //The method converts seconds (integer) into String HHч MMмин SSсек
+    public static String convertSeconds(int sec) {
+        String sign = sec < 0? "-" : "";
+        sec = abs(sec);
+        int hours = sec / 3600;
+        int rest = sec % 3600;
+        int minutes = rest / 60;
+        int seconds = rest % 60;
+
+        return String.format("%s%dч %dмин %dсек", sign, hours, minutes, seconds);
+    }
+
+    //The method checks if a point with coordinates x and y belongs to the area described in the task 6
+    public static boolean checkBelong(double x, double y) {
+        return false;
+    }
+
     //just testing the methods above
     public static void main(String[] args) {
         System.out.println(firstSimpleFunction(1, 2.2, 0));
         System.out.println(secondSimpleFunction(-5, 2, -5));
         System.out.println(thirdSimpleFunction(0, 0.01));
+        System.out.println(convertRational(-504.987));
+        System.out.println(convertSeconds(-1111808));
+
     }
 }
