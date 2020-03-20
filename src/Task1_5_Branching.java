@@ -1,4 +1,5 @@
 import java.math.BigDecimal;
+import java.util.Arrays;
 
 //This class contains 5 branching tasks
 public class Task1_5_Branching {
@@ -20,7 +21,7 @@ public class Task1_5_Branching {
         return checks;
     }
 
-    //This method finds max(min(a, b), min(c, d))
+    //This method finds max(min(a, b), min(c, d)) without using Math.min and Moth.max
     public static double findMamimin(double a, double b, double c, double d) {
         double firstMin = (a < b)? a : b;
         double secondMin = (c < d)? c : d;
@@ -77,7 +78,7 @@ public class Task1_5_Branching {
 
     //This is just to check the methods above
     public static void main(String[] args) {
-        System.out.println(checkTriangle(88, 1)[0] + " " + checkTriangle(88, 1)[1]);
+        System.out.println(Arrays.toString(checkTriangle(88, 1)));
         System.out.println(findMamimin(4.3, -3, 22, 0));
         System.out.println(checkLine(new BigDecimal(0), new BigDecimal(0), new BigDecimal(1),
                 new BigDecimal(1), new BigDecimal(-1.1), new BigDecimal(-1.1)));
